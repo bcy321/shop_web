@@ -1,0 +1,61 @@
+.object-button {
+    appearance: none;
+    border: none;
+    cursor: pointer;
+    display: inline-block;
+    font-family: 'Montserrat', sans-serif;
+    padding: inherit;
+    text-align: center;
+    user-select: none;
+}
+
+.object-button.prop-dark {
+    background-color: #000000;
+    border: 0.0625rem solid #000000;
+    color: #ffffff;
+}
+
+
+*.object-fit {
+    width: var(--width-max);
+}
+
+*.object-fit > *.object-fit-child {
+    left: 50%;
+    width: var(--width-max);
+    position: relative;
+    transform: translateX(-50%);
+}
+
+ul.object-default-ul {
+    list-style-type: none;
+    margin-block-start: 0;
+    margin-block-end: 0;
+    margin-inline-start: 0;
+    margin-inline-end: 0;
+    padding-inline-start: 0;
+}
+
+.object-button.prop-light {
+    background-color: #ffffff;
+    border: 0.0625rem solid var(--border-color-default);
+}
+
+.object-check {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    user-select: none;
+}
+
+.object-check > input[type=checkbox] {
+    margin: 0 0.25rem 0 0;
+}
+
+.object-text {
+    border: 0.0625rem solid var(--border-color-default);
+    font: inherit;
+    outline: none;
+    padding: 0.75rem 1rem;
+}

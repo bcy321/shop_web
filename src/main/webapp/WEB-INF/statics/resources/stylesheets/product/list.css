@@ -1,0 +1,75 @@
+body.category > main {
+    align-items: center;
+}
+
+body.category > main > div {
+    width: var(--width-max);
+}
+
+body > main > div > section {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 1rem;
+}
+
+body > main > div > section > div {
+    cursor: pointer;
+}
+
+body > main > div > section > div > a > img {
+    width: 5rem;
+    height: 6rem;
+    margin-bottom: 0.5rem;
+    position: relative;
+    left: 2rem;
+}
+
+
+body > main > div > form{
+    padding: 1rem 0;
+    text-align: center;
+}
+body > main > div > div.moved{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+body > main > div > div.moved > span > a.number{
+    padding: 0.33rem;
+}
+body > main > div > div.moved > span > a.number:hover{
+    background-color: #80858a;
+    border-radius: 0.33rem;
+}
+
+body > main > div > div.moved > div.manager{
+    left: 50%;
+    display: inline-grid;
+    grid-gap: 1rem;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    position: relative;
+    transform: translateX(-50%);
+
+
+}
+
+body > main > div > div.moved > div.manager > ul > li > a{
+    padding: 0.66rem 1.5rem;
+}
+.price{
+    color:#48cfad;
+    font-size:1rem;
+    font-weight:300;
+}
+.search{
+    padding: 0.37rem 0.45rem;
+    appearance: none;
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    user-select: none;
+    background-color: #000000;
+    border: 0.0625rem solid #000000;
+    color: #ffffff;
+}

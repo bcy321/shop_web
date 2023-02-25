@@ -1,0 +1,111 @@
+body.user-register #postal-layer {
+    top: 50%;
+    left: 50%;
+    width: 25rem;
+    height: 30rem;
+    box-shadow: 0 0 0.5rem 0.0625rem #50505050;
+    display: none;
+    position: fixed;
+    transform: translate(-50%, -50%);
+    z-index: 9;
+}
+
+body.user-register #postal-layer.visible {
+    display: block;
+}
+
+body.user-register > main {
+    align-items: center;
+    padding: 3rem 0;
+}
+
+body.user-register > main > div > form .warning {
+    color: red;
+    display: none;
+    margin-left: 1rem;
+}
+
+body.user-register > main > div > form .warning.visible {
+    display: inline-block;
+}
+
+body.user-register > main > div > form > table {
+    width: var(--width-max);
+    border-collapse: collapse;
+    margin-bottom: 3rem;
+}
+
+body.user-register > main > div > form > table > caption {
+    padding-bottom: 1rem;
+    text-align: left;
+}
+
+body.user-register > main > div > form > table > tbody > tr > th {
+    width: 10rem;
+    border-right: 0.0625rem solid var(--border-color-default);
+    text-align: left;
+}
+
+body.user-register > main > div > form > table > tbody > tr > td,
+body.user-register > main > div > form > table > tbody > tr > th {
+    border-bottom: 0.0625rem solid var(--border-color-default);
+    padding: 0.75rem;
+}
+
+body.user-register > main > div > form > table > tbody > tr:first-child > td,
+body.user-register > main > div > form > table > tbody > tr:first-child > th {
+    border-top: 0.125rem solid #000000;
+}
+
+body.user-register > main > div > form > table > tbody > tr > th > span {
+    color: red;
+}
+
+body.user-register > main > div > form > table > tbody > tr > td input {
+    height: 1.75rem;
+    padding: 0 0.66rem;
+}
+
+body.user-register > main > div > form > table > tbody > tr > td > label {
+    align-items: center;
+    display: flex;
+}
+
+body.user-register > main > div > form > table > tbody > tr > td > label:not(:last-child) {
+    margin-bottom: 0.33rem;
+}
+
+body.user-register > main > div > form > table > tbody > tr > td > label > input[type=button] {
+    margin-left: 0.33rem;
+}
+
+body.user-register > main > div > form input[name=addressStandard],
+body.user-register > main > div > form input[name=addressDetail] {
+    width: 25rem;
+}
+
+body.user-register > main > div > form > table > tbody > tr > td.disc > label:first-child {
+    display: block;
+}
+
+body.user-register > main > div > form > table > tbody > tr > td.disc > label:first-child > textarea {
+    width: 100%;
+    height: 10rem;
+    box-sizing: border-box;
+    resize: none;
+    margin-top: 1rem;
+}
+
+body.user-register > main > div > form > div {
+    left: 50%;
+    display: inline-grid;
+    grid-gap: 1rem;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    position: relative;
+    transform: translateX(-50%);
+}
+
+body.user-register > main > div > form > div > * {
+    padding: 1rem 3rem;
+}

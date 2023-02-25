@@ -1,0 +1,85 @@
+body.add > main {
+    padding: 3rem 0;
+}
+
+body.add > main > div > form .warning {
+    color: red;
+    display: none;
+    margin-left: 1rem;
+}
+
+body.add > main > div > form .warning.visible {
+    display: inline-block;
+}
+
+body.add > main > div > form > table {
+    width: var(--width-max);
+    border-collapse: collapse;
+    margin-bottom: 3rem;
+}
+
+body.add > main > div > form > table > caption {
+    padding-bottom: 1rem;
+    text-align: left;
+}
+
+body.add > main > div > form > table > tbody > tr > th {
+    width: 10rem;
+    border-right: 0.0625rem solid var(--border-color-default);
+    text-align: left;
+}
+
+body.add > main > div > form > table > tbody > tr > td,
+body.add > main > div > form > table > tbody > tr > th {
+    border-bottom: 0.0625rem solid var(--border-color-default);
+    padding: 0.75rem;
+}
+
+body.add > main > div > form > table > tbody > tr:first-child > td,
+body.add > main > div > form > table > tbody > tr:first-child > th {
+    border-top: 0.125rem solid #000000;
+}
+
+body.add > main > div > form > table > tbody > tr > th > span {
+    color: red;
+}
+
+body.add > main > div > form > table > tbody > tr > td input {
+    height: 1.75rem;
+    padding: 0 0.66rem;
+}
+
+body.add > main > div > form > table > tbody > tr > td > label {
+    align-items: center;
+    display: flex;
+}
+
+body.add > main > div > form > table > tbody > tr > td > label:not(:last-child) {
+    margin-bottom: 0.33rem;
+}
+
+body.add > main > div > form > table > tbody > tr > td > label > input[type=button] {
+    margin-left: 0.33rem;
+}
+
+body.add > main > div > form > table div.ck-editor {
+    width: 100%;
+}
+
+body.add > main > div > form > table div.ck-editor__editable_inline {
+    min-height: 20rem;
+}
+
+body.add > main > div > form > div {
+    left: 50%;
+    display: inline-grid;
+    grid-gap: 1rem;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    position: relative;
+    transform: translateX(-50%);
+}
+
+body.add > main > div > form > div > * {
+    padding: 1rem 3rem;
+}

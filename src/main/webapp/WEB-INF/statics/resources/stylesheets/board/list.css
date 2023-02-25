@@ -1,0 +1,77 @@
+body.board-list > main {
+    align-items: center;
+    padding: 3rem 0;
+}
+
+body.board-list > main > div > table {
+    width: var(--width-max);
+    border-collapse: collapse;
+    margin-bottom: 3rem;
+}
+
+body.board-list > main > div > table > thead > tr > th:not(:nth-child(2)){
+    border-right: 0.0625rem solid var(--border-color-default);
+    text-align: center;
+}
+
+
+body.board-list > main > div > table > tbody > tr > td:not(:nth-child(2)) {
+    border-right: 0.0625rem solid var(--border-color-default);
+    text-align: center;
+}
+body.board-list > main > div > table > tbody > tr > td.none{
+    padding: 2rem;
+    text-align: center;
+}
+body.board-list > main > div > table > tbody > tr > td > a.comment-count{
+    background-color: #a0a0a0;
+    border-radius: 0.125rem;
+    color: #ffffff;
+    font-size: 0.7rem;
+    padding: 0.125rem 0.25rem;
+}
+body.board-list > main > div > table > tbody > tr > td{
+    border-bottom: 0.0625rem solid var(--border-color-default);
+    padding: 0.75rem;
+}
+
+body.board-list > main > div > table > thead > tr{
+    border-top: 0.125rem solid #000000;
+    border-bottom: 0.025rem solid #000000;
+}
+body.board-list > main > div > table > thead > tr > th{
+    padding: 0.33rem;
+}
+
+body.board-list > main > div > div {
+    left: 50%;
+    display: inline-grid;
+    grid-gap: 1rem;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    position: relative;
+    transform: translateX(-50%);
+}
+
+body.board-list > main > div > div > * {
+    padding: 1rem 3rem;
+}
+
+.subject{
+    padding-left: 1.33rem;
+    text-align: left;
+    margin-left: 0.33rem;
+
+}
+
+body.board-list > main > div > table > tfoot > tr > td{
+    padding: 1rem 0;
+    text-align: center;
+}
+body.board-list > main > div > table > tfoot > tr > td > span > a.number{
+    padding: 0.33rem;
+}
+body.board-list > main > div > table > tfoot > tr > td > span > a.number:hover{
+    background-color: #80858a;
+    border-radius: 0.33rem;
+}

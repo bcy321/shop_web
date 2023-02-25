@@ -1,0 +1,43 @@
+body > main > div > div  {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+body > main > div > div > form  {
+    display: inline-grid;
+    grid-gap: 1rem;
+}
+
+body > main > div > div > div > img{
+    height: 20rem;
+}
+body > main > div > div > form > div > table{
+    width: calc(var(--width-max) - 6rem);
+    border-collapse: collapse;
+}
+body > main > div > div > form > div > table > tbody > tr > th{
+    width: 4rem;
+    border-right: 0.0625rem solid var(--border-color-default);
+    text-align: left;
+}
+
+
+body > main > div > div > form > div > table > tbody > tr > td,
+body > main > div > div > form > div > table > tbody > tr > th {
+    border-bottom: 0.0625rem solid var(--border-color-default);
+    padding: 0.75rem;
+}
+
+
+body > main > div > div > form > div > table > tbody > tr > td.color > span{
+    padding: 2px 6px;
+    border-radius: 100%;
+}
+
+body > main > div > div > form > div > table > tbody > tr:first-child > td,
+body > main > div > div > form > div > table > tbody > tr:first-child > th {
+    border-top: 0.125rem solid #000000;
+}
+

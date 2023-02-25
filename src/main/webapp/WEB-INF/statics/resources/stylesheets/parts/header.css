@@ -1,0 +1,161 @@
+body > header {
+    width: 100%;
+    align-items: flex-start;
+    background-color: var(--backcolor-default);
+    border-bottom: 0.0625rem solid var(--border-color-default);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    position: fixed;
+    z-index: 1;
+}
+
+body > header > .container {
+    width: var(--width-max);
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 1.5rem 0;
+    position: relative;
+}
+
+body > header > .container > .menu {
+    align-items: flex-start;
+    display: inline-flex;
+    flex-direction: row;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 300;
+    justify-content: center;
+    position: relative;
+}
+
+body > header > .container > .menu > li {
+    position: relative;
+}
+
+body > header > .container > .menu:nth-child(1) > li:not(:last-child) {
+    margin-right: 1rem;
+}
+
+body > header > .container > .menu:nth-child(3) > li:not(:last-child) {
+    margin-right: 0.5rem;
+}
+
+body > header > .container > .menu > li > i,
+body > header > .container > .menu > li > label > i {
+    cursor: pointer;
+    font-size: 1rem;
+    padding: 0.33rem;
+}
+
+body > header > .container > .menu > li > .text {
+    cursor: pointer;
+}
+
+body > header > .container > .menu > li > .submenu {
+    left: 50%;
+    display: none;
+    padding-top: 0.75rem;
+    position: absolute;
+    transform: translateX(-50%);
+}
+
+body > header > .container > .menu > li:hover > .submenu {
+    display: block;
+}
+
+body > header > .container > .menu > li > .submenu:hover {
+    display: block;
+}
+
+body > header > .container > .menu > li > .submenu > li {
+    background-color: #000000a0;
+    color: #ffffff;
+    cursor: pointer;
+    word-break: keep-all;
+}
+
+body > header > .container > .menu > li > .submenu > li > a {
+    display: block;
+    padding: 0.65rem 1rem;
+}
+
+body > header > .container > .menu > li > .submenu > li:hover {
+    background-color: #000000c0;
+}
+
+input#aside-check[type="checkbox"] + aside {
+    top: 0;
+    right: 0;
+    width: 25rem;
+    height: 100vh;
+    background-color: #ffffff;
+    border-left: 0.0625rem solid var(--border-color-default);
+    box-sizing: border-box;
+    display: none;
+    padding: 2.5rem;
+    position: fixed;
+    z-index: 1;
+}
+
+input#aside-check[type="checkbox"]:checked + aside {
+    display: block;
+}
+
+input#aside-check[type="checkbox"] + aside > div.close {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    font-size: 2rem;
+    justify-content: flex-end;
+    margin-bottom: 2rem;
+}
+
+input#aside-check[type="checkbox"] + aside > div.close > label > i {
+    cursor: pointer;
+}
+
+input#aside-check[type="checkbox"] + aside > div.content {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+input#aside-check[type="checkbox"] + aside > div.content > *:not(:last-child) {
+    margin-bottom: 0.33rem;
+}
+
+input#aside-check[type="checkbox"] + aside > div.content > a > span {
+    margin-left: 0.5rem;
+}
+
+input#aside-check[type="checkbox"] + aside > div.content > ul.disc {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+input#aside-check[type="checkbox"] + aside > div.content > ul.disc > li:not(:last-child) {
+    margin-right: 1rem;
+}
+
+input#aside-check[type="checkbox"] + aside > div.content > section > h1 {
+    font-size: 1rem;
+    margin: 0.9rem;
+}
+
+body > header > .container > .logo {
+    left: 50%;
+    position: absolute;
+    transform: translateX(-50%);
+}
+
+body > header > .container > .logo > img{
+    height: 3.5rem;
+    border-radius: 0.33rem;
+}

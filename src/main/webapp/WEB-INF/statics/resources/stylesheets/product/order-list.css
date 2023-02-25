@@ -1,0 +1,35 @@
+body > main {
+    align-items: center;
+    padding: 3rem 0;
+}
+
+body > main > div > table {
+    width: var(--width-max);
+    border-collapse: collapse;
+    margin-bottom: 3rem;
+}
+
+body > main > div > table > thead > tr > th:not(:nth-child(2)){
+    border-right: 0.0625rem solid var(--border-color-default);
+    text-align: center;
+}
+
+
+body > main > div > table > tbody > tr > td{
+    border-right: 0.0625rem solid var(--border-color-default);
+    text-align: center;
+    border-bottom: 0.0625rem solid var(--border-color-default);
+    padding: 0.75rem;
+}
+body > main > div > table > tbody > tr > td.none{
+    padding: 2rem;
+    text-align: center;
+}
+
+body > main > div > table > thead > tr{
+    border-top: 0.125rem solid #000000;
+    border-bottom: 0.025rem solid #000000;
+}
+body > main > div > table > thead > tr > th{
+    padding: 0.33rem;
+}

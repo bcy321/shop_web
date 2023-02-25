@@ -1,0 +1,86 @@
+body > main {
+    align-items: center;
+    padding: 3rem 0;
+}
+
+body > main > div > table {
+    width: var(--width-max);
+    border-collapse: collapse;
+    margin-bottom: 3rem;
+}
+
+body > main > div > table > thead > tr > th:not(:nth-child(2)){
+    border-right: 0.0625rem solid var(--border-color-default);
+    text-align: center;
+}
+
+
+body > main > div > table > tbody > tr > td:not(:nth-child(2)) {
+    border-right: 0.0625rem solid var(--border-color-default);
+    text-align: center;
+}
+body > main > div > table > tbody > tr > td.none{
+    padding: 2rem;
+    text-align: center;
+}
+
+body > main > div > table > tbody > tr > td{
+    border-bottom: 0.0625rem solid var(--border-color-default);
+    padding: 0.75rem;
+}
+
+body > main > div > table > thead > tr{
+    border-top: 0.125rem solid #000000;
+    border-bottom: 0.025rem solid #000000;
+}
+body > main > div > table > thead > tr > th{
+    padding: 0.33rem;
+}
+
+body > main > div > div {
+    left: 50%;
+    display: inline-block;
+    position: relative;
+    transform: translateX(-50%);
+}
+
+body > main > div > div > a {
+    padding: 1rem 3rem;
+}
+
+.subject{
+    padding-left: 1.33rem;
+    text-align: left;
+    margin-left: 0.33rem;
+
+}
+
+body > main > div > table > tfoot > tr > td{
+    padding: 1rem 0;
+    text-align: center;
+}
+body > main > div > table > tfoot > tr > td > span > a.number{
+    padding: 0.33rem;
+}
+body > main > div > table > tfoot > tr > td > span > a.number:hover{
+    background-color: #80858a;
+    border-radius: 0.33rem;
+}
+
+
+.price{
+    color:#48cfad;
+    font-size:1rem;
+    font-weight:300;
+}
+.search{
+    padding: 0.37rem 0.45rem;
+    appearance: none;
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    user-select: none;
+    background-color: #000000;
+    border: 0.0625rem solid #000000;
+    color: #ffffff;
+}

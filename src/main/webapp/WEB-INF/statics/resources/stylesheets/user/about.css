@@ -1,0 +1,62 @@
+body > main {
+    align-items: center;
+    padding: 3rem 0;
+}
+
+body > main > div > div.about-section {
+    padding: 1rem;
+    text-align: center;
+    background-color: #474e5d;
+    color: #ffffff;
+}
+
+body > main > div > div.about-section > h2{
+    font-size: 1.1rem;
+    font-weight: 100;
+}
+body > main > div > div.row > div.column > div.card > div.container > h3{
+    font-size: 1rem;
+    font-weight: 100;
+}
+body > main > div > div.row > div.column > div.card > div.container {
+    padding: 0 1rem;
+}
+body > main > div > div.row > div.column > div.card > div.container::after,
+body > main > div > div.row::after{
+    content: "";
+    clear: both;
+    display: table;
+}
+
+body > main > div > div.row > div.column {
+    float: left;
+    width: 30.1%;
+    margin-bottom: 1rem;
+    padding: 0 0.5rem;
+}
+
+body > main > div > div.row > div.column > div.card{
+    box-shadow: 0 0.3rem 0.5rem 0 rgba(0, 0, 0, 0.2);
+    margin: 0.5rem;
+}
+body > main > div > div.row > div.column > div.card:nth-child(1){
+    margin-left: 2.21rem;
+}
+
+body > main > div > div.row > div.column > div.card > img{
+    width: 100%;
+}
+
+body > main > div > div.row > div.column > div.card > div.container > p.title{
+    color: grey;
+}
+
+
+
+
+@media screen and (max-width: 650px) {
+    .column {
+        width: 100%;
+        display: block;
+    }
+}

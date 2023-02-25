@@ -1,0 +1,78 @@
+body #postal-layer {
+    top: 50%;
+    left: 50%;
+    width: 25rem;
+    height: 30rem;
+    box-shadow: 0 0 0.5rem 0.0625rem #50505050;
+    display: none;
+    position: fixed;
+    transform: translate(-50%, -50%);
+    z-index: 9;
+}
+
+body #postal-layer.visible {
+    display: block;
+}
+
+body > main {
+    align-items: center;
+    padding: 3rem 0;
+}
+
+
+body > main > div > form > table {
+    width: var(--width-max);
+    border-collapse: collapse;
+    margin-bottom: 3rem;
+}
+
+
+body > main > div > form > table > tbody > tr > th{
+    width: 1rem;
+    border-right: 0.0625rem solid var(--border-color-default);
+    text-align: left;
+}
+
+body > main > div > form > table > tbody > tr > td,
+body > main > div > form > table > tbody > tr > th {
+    border-bottom: 0.0625rem solid var(--border-color-default);
+    padding: 0.75rem;
+}
+
+
+
+body > main > div > form > table > tbody > tr:first-child > td,
+body > main > div > form > table > tbody > tr:first-child > th {
+    border-top: 0.125rem solid #000000;
+}
+
+
+body > main > div >  form > table > tbody > tr > td input {
+    width: 25rem;
+    height: 1.75rem;
+    padding: 2rem 5rem;
+}
+
+body > main > div >  form > table > tbody > tr > td textarea{
+    width: 25rem;
+    height: 12rem;
+    padding: 5rem 5rem;
+}
+
+body > main > div > form > div {
+    left: 50%;
+    display: inline-grid;
+    grid-gap: 1rem;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    position: relative;
+    transform: translateX(-50%);
+}
+
+body > main > div > form > div > * {
+    padding: 1rem 3rem;
+}
+
+body > main > div > form > table > tbody > tr > th > span {
+    color: red;
+}

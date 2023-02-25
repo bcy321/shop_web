@@ -1,0 +1,74 @@
+@import "parts/footer.css";
+@import "parts/header.css";
+@import "object.css";
+
+:root {
+    --backcolor-default : #ffffff;
+    --border-color-default: #eaeaea;
+    --forecolor-default : #00050a;
+
+    --width-max: 70rem;
+}
+
+html {
+    font-size: 16px;
+}
+
+body {
+    min-height: 100vh;
+    align-items: flex-start;
+    background-color: var(--backcolor-default);
+    color: var(--forecolor-default);
+    display: flex;
+    flex-direction: column;
+    font-family: 'Nanum Gothic', sans-serif;
+    font-size: 0.825rem;
+    font-weight: 400;
+    justify-content: flex-start;
+    margin: 0;
+    overflow-x: hidden;
+}
+
+body > main {
+    width: 100%;
+    align-items: flex-start;
+    display: flex;
+    flex: 1;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 5rem;
+    position: relative;
+}
+
+a:link, a:visited {
+    color: inherit;
+    text-decoration: none;
+}
+
+ol, ul {
+    list-style-type: none;
+    margin-block-start: 0;
+    margin-block-end: 0;
+    margin-inline-start: 0;
+    margin-inline-end: 0;
+    padding-inline-start: 0;
+    padding-inline-end: 0;
+}
+
+li {
+    list-style-type: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font: inherit;
+    margin-block-start: 0;
+    margin-block-end: 0;
+}
+
+body > main > div > h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 300;
+    margin-bottom: 3rem;
+    text-align: center;
+}

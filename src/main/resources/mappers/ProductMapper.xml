@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bcyportfolio.shopping.mappers.IProductMapper">
+
+    <delete id="deleteProduct">
+        DELETE
+        FROM `last_bbs`.`items`
+        WHERE `index` = #{iid}
+        LIMIT 1
+    </delete>
+    <select id="selectProduct" resultType="com.bcyportfolio.shopping.dtos.ProductDto">
+        SELECT `index`       AS `index`,
+               category_code AS `categoryCode`,
+               name          AS `name`,
+               price         AS `price`,
+               image         AS `images`,
+               content       AS `content`
+        FROM `last_bbs`.`items`
+        WHERE `index` = #{iid}
+        LIMIT 1
+    </select>
+    <select id="selectProducts" resultType="com.bcyportfolio.shopping.dtos.ProductDto">
+        SELECT `index` AS `index`,
+               `category_code` AS `categoryCode`,
+               `name` AS `name`,
+               `price` AS `price`,
+               `image` AS `images`,
+               `content` AS `content`
+        FROM `last_bbs`.`items`
+        WHERE `category_code` = #{cid}
+        ORDER BY `index` DESC
+        LIMIT #{limit} OFFSET #{offset}
+    </select>
+    <select id="selectCategories" resultType="com.bcyportfolio.shopping.dtos.CategoryDto">
+        SELECT `index` AS `index`,
+               code AS code,
+               name AS name,
+               content AS content
+        FROM `last_bbs`.`item_categories`
+    </select>
+    <select id="selectOptions" resultType="com.bcyportfolio.shopping.dtos.OptionDto">
+        SELECT `index`      AS `index`,
+               item_index   AS itemIndex,
+               color_option AS colorOption,
+               size_option  AS sizeOption,
+               stock        AS stock
+        FROM `last_bbs`.`item_options`
+        WHERE `item_index` = #{iid}
+    </select>
+    <select id="selectCategory" resultType="com.bcyportfolio.shopping.dtos.CategoryDto">
+        SELECT `index` AS `index`,
+               code AS code,
+               name AS name,
+               content AS content
+        FROM `last_bbs`.`item_categories`
+        WHERE `code`=#{id}
+        LIMIT 1
+    </select>
+    <select id="selectCategoryByProduct" resultType="com.bcyportfolio.shopping.dtos.CategoryDto">
+        SELECT category.`index` AS `index`,
+               category.code AS code,
+               category.name AS name,
+               category.content AS content
+        FROM `last_bbs`.`items` AS `item` LEFT JOIN `last_bbs`.`item_categories` AS `category` on `category`.`code` = item.category_code
+        WHERE `item`.`index` = #{iid}
+        LIMIT 1
+    </select>
+    <select id="selectProductCount" resultType="_int">
+        SELECT COUNT(`index`)FROM `last_bbs`.`items`WHERE `category_code` = #{cid}
+    </select>
+    <select id="selectProductCountByName" resultType="_int">
+        SELECT COUNT(`index`)
+        FROM `last_bbs`.`items`
+        WHERE `category_code` = #{cid}
+          AND `name` LIKE CONCAT('%', #{keyword}, '%')
+    </select>
+    <select id="selectProductCountByContent" resultType="_int">
+        SELECT COUNT(`index`)
+        FROM `last_bbs`.`items`
+        WHERE `category_code` = #{cid}
+          AND (`name` LIKE CONCAT('%', #{keyword}, '%') OR `content` LIKE CONCAT('%', #{keyword}, '%'))
+    </select>
+    <select id="selectProductsByName" resultType="com.bcyportfolio.shopping.dtos.ProductDto">
+        SELECT `index` AS `index`,
+               `category_code` AS `categoryCode`,
+               `name` AS `name`,
+               `price` AS `price`,
+               `image` AS `images`,
+               `content` AS `content`
+        FROM `last_bbs`.`items`
+        WHERE `category_code` = #{cid}
+          AND `name` LIKE CONCAT('%', #{keyword}, '%')
+        ORDER BY `index` DESC
+        LIMIT #{limit} OFFSET #{offset}
+    </select>
+    <select id="selectProductsByContent" resultType="com.bcyportfolio.shopping.dtos.ProductDto">
+        SELECT `index` AS `index`,
+               `category_code` AS `categoryCode`,
+               `name` AS `name`,
+               `price` AS `price`,
+               `image` AS `images`,
+               `content` AS `content`
+        FROM `last_bbs`.`items`
+        WHERE `category_code` = #{cid}
+          AND (`name` LIKE CONCAT('%', #{keyword}, '%') OR `content` LIKE CONCAT('%', #{keyword}, '%'))
+        ORDER BY `index` DESC
+        LIMIT #{limit} OFFSET #{offset}
+    </select>
+    <insert id="insertProduct">
+        INSERT INTO `last_bbs`.`items` (`category_code`, `name`, `price`, `image`,`content`)
+        VALUES (#{cid}, #{name}, #{price}, #{image},#{content})
+    </insert>
+    <insert id="insertOption">
+        INSERT INTO `last_bbs`.`item_options` (`item_index`, `color_option`, `size_option`,`stock`)
+        VALUES (#{iid}, #{colorOption}, #{sizeOption}, #{stock})
+    </insert>
+    <update id="updateProduct">
+        UPDATE `last_bbs`.`items`
+        SET `category_code`   = #{categoryCode},
+            `name` = #{name},
+            `price` = #{price},
+            `image` = #{image},
+            `content` = #{content}
+        WHERE `index` = #{iid}
+        LIMIT 1
+    </update>
+
+    <select id="selectLastInsertId" resultType="_int">
+        SELECT LAST_INSERT_ID()
+    </select>
+
+    <delete id="deleteProductOption">
+        DELETE
+        FROM `last_bbs`.`item_options`
+        WHERE `item_index` = #{iid}
+        LIMIT 1
+    </delete>
+
+    <select id="selectOptionColorCount" resultType="_int">
+        SELECT COUNT(`index`)
+        FROM `last_bbs`.item_options
+        WHERE item_index = #{iid}
+          AND color_option = #{colorOption}
+    </select>
+    <select id="selectOptionColor" resultType="com.bcyportfolio.shopping.dtos.OptionDto">
+        SELECT `index` AS `index`,
+               item_index AS itemIndex,
+               color_option AS colorOption,
+               size_option AS sizeOption,
+               stock AS stock
+        FROM `last_bbs`.item_options
+        WHERE item_index = #{iid}
+          AND color_option = #{colorOption}
+    </select>
+
+    <select id="selectOptionSizeCount" resultType="_int">
+        SELECT COUNT(`index`)
+        FROM `last_bbs`.item_options
+        WHERE item_index = #{iid}
+          AND color_option = #{colorOption}
+          AND size_option = #{sizeOption}
+    </select>
+
+
+
+    <insert id="insertOrder">
+        INSERT INTO `last_bbs`.`orders` (item_index, user_email, color_option, size_option, stock, address_Post,
+                                         address_primary, address_secondary, content)
+        VALUES (#{iid}, #{userEmail}, #{colorOption}, #{sizeOption}, #{stock}, #{addressPost},
+                #{addressPrimary}, #{addressSecond}, #{content})
+    </insert>
+
+    <select id="selectOptionStock" resultType="_int">
+        SELECT stock AS stock
+        FROM `last_bbs`.item_options
+        WHERE item_index = #{iid}
+          AND color_option = #{colorOption}
+          AND size_option = #{sizeOption}
+    </select>
+
+    <update id="updateOptionStock">
+        UPDATE `last_bbs`.`item_options`
+        SET `stock` = #{stock}
+        WHERE item_index = #{iid}
+          AND color_option = #{colorOption}
+          AND size_option = #{sizeOption}
+        LIMIT 1
+    </update>
+
+    <select id="selectOrderList" resultType="com.bcyportfolio.shopping.dtos.OrderDto">
+        SELECT item.category_code AS categoryId,
+               item.name          AS itemName,
+               order.color_option AS colorOption,
+               order.stock        AS stock,
+               item.price         AS price
+        FROM `last_bbs`.orders AS `order`
+                 LEFT JOIN `last_bbs`.items AS `item` ON `order`.item_index = item.`index`
+        WHERE order.user_email = #{email}
+    </select>
+
+    <select id="selectMainByImages" resultType="_int">
+        SELECT `index` FROM `last_bbs`.`items` ORDER BY RAND() LIMIT 9
+    </select>
+
+</mapper>
+
